@@ -1,0 +1,21 @@
+<p>galleries works asf a!</p>
+<ul #gamesContainer>
+    <li class="list" *ngFor="let game of games" >
+        Game: {{game.title}}
+        <span *ngIf="game.price > 50">
+        Total games = {{game.title && game.title.length}}
+        Price: {{game.price}}
+        </span>
+        <img [src]="game.image" alt="" width="300px" />
+    </li>
+   
+    
+    
+</ul>
+
+    <input type="text" [value]="'game 1'" [(ngModel)]="searchText" placeholder="search for a game" />
+    {{searchText}}
+ <button (click)="handleGalleryClick()">Click me</button>
+
+ <app-gallery-item></app-gallery-item>
+Total games = {{gamesContainer.children.length}}
