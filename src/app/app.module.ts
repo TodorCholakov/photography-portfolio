@@ -7,18 +7,21 @@ import { AppComponent } from './app.component';
 import { GalleriesComponent } from './galleries/galleries.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleriesComponent,
     GalleryItemComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule  
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
