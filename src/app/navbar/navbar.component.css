@@ -1,5 +1,5 @@
 
-const NavWrapper = styled.div`
+#NavWrapper {
 z-index: 9999;
 height: 40px;
 display: flex;
@@ -7,22 +7,21 @@ display: -webkit-flex;
 -webkit-justify-content: space-between;
 flex-direction: column;
 justify-content: space-between;
-
 @media (max-width: 768px) {
   transition: 500ms;
   transition-timing-function: ease-in;
   opacity: 1;
   overflow: hidden;
   background-color: #000000;
-  &:hover {
+ hover {
     transition-timing-function: ease-in;
     z-index: 9999;
     transition: 500ms;
     height: 400px;
   }
 }
-`;
-const ListElement = styled.li`
+}
+li {
 display: flex;
 color: #fff;
 fill: #fff;
@@ -33,9 +32,7 @@ padding-bottom: 5px;
 font-size: 13px;
 font-weight: 300;
 letter-spacing: 1px;
-&:nth-child(1) {
-  display: none;
-}
+
 @media (max-width: 768px) {
   background-color: black;
   padding: 10px;
@@ -48,15 +45,14 @@ letter-spacing: 1px;
     padding-top: 6px;
   }
 }
-`;
-const UlList = styled.ul`
+}
+
+ul {
 list-style: none;
 display: flex;
 align-items: center;
 color: #ffffff;
 background-color: black;
-width: ${actualInnerWidth};
-opacity: 0.7;
 
 font-family: "Montserrat", sans-serif;
 justify-content: right;
@@ -65,7 +61,7 @@ justify-content: right;
   flex-direction: column;
   opacity: 1;
 }
-
+}
 a {
   color: #fff;
   text-decoration: none;
@@ -89,4 +85,3 @@ a:hover:after {
   width: 100%;
   left: 0;
 }
-`;

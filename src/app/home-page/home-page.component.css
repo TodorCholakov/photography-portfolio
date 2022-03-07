@@ -1,0 +1,64 @@
+#HR{
+  border-bottom: 1px solid white;
+  margin: 3px;
+  opacity: 0.7;
+  width: 100%;
+}
+#Title{
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#SubTitle{
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+}
+#Image{
+  object-fit: cover;
+  height: 100%;
+  margin-top: -40px;
+  @media (max-width: 768px) {
+    overflow: auto;
+  }
+}
+
+#GalleryItemsWrpper{
+  display: flex;
+  width: 100%;
+  align-items: bottom;
+  justify-content: center;
+  margin-top: -90px;
+ 
+}
+a {
+    text-decoration: none;
+  }
+#AboutMeContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  letter-spacing: 1px;
+  transition: 500ms;
+}
+
+#Wrapper {
+  display: flex;
+  flex-direction: column;
+
+  height: calc(100vh - 20px);
+  margin: 10px;
+  @media (max-width: 768px) {
+    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    margin: 0 auto;
+  }
+}
+
+
