@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from "@angular/router"
 @Component({
   selector: 'app-gallery-item',
   templateUrl: './gallery-item.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+  onLoadServers(){
+    this.router.navigate(['/auth'])
   }
 
 }

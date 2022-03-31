@@ -20,7 +20,7 @@
 #Image{
   object-fit: cover;
   height: 100%;
-    margin-top:-35px;
+    margin-top:-40px;
    
   z-index:-1;
   @media (max-width: 768px) {
