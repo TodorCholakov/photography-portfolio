@@ -1,39 +1,59 @@
+
+
+<div id="NavWrapper">
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">Recipe Book</a>
-    </div>
+ 
+  
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+        <li routerLinkActive="active" >
+          <a routerLink="/">Home</a>
+        </li>
         <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/recipes">Recipes</a>
         </li>
-        <li routerLinkActive="active" *ngIf="!isAuthenticated">
-          <a routerLink="/auth">Authenticate</a>
+        <li routerLinkActive="active">
+          <a routerLink="/gallery">Gallery</a>
         </li>
         <li routerLinkActive="active">
           <a routerLink="/shopping-list">Shopping List</a>
         </li>
+      
+        <li routerLinkActive="active">
+          <a routerLink="/shopping-list">Contact</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a routerLink="/auth">Authenticate</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="isAuthenticated">
-          <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
-        </li>
+        
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
-          <a style="cursor: pointer;" class="dropdown-toggle" role="button"
-            >Manage <span class="caret"></span
-          ></a>
+          
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer;" (click)="onSaveData()">Save Data</a>
+              <a routerLink="/add-image" (click)="onSaveData()" style="cursor: pointer;" >Test</a>
             </li>
             <li>
-              <a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+              <a routerLink="/add-image" style="cursor: pointer;" >All images </a>
+            </li>
+            <li>
+              <a routerLink="/add-image" style="cursor: pointer;" >Add image </a>
+            </li>
+            <li>
+              <a style="cursor: pointer;" (click)="onSaveData()">Delete image</a>
+            </li>
+            <li>
+              <a style="cursor: pointer;" (click)="onFetchData()">Delete all images</a>
+            </li>
+            <li *ngIf="isAuthenticated">
+              <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
             </li>
           </ul>
         </li>
       </ul>
     </div>
-  </div>
+ 
 </nav>
+</div>

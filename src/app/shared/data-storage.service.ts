@@ -3,23 +3,23 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, tap, take, exhaustMap } from 'rxjs/operators';
 
 import { Recipe } from '../recipes/recipe.model';
-import { RecipeService } from '../recipes/recipe.service';
+import { ImageService } from '../image/image.service';
 import { AuthService } from '../auth/auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
   constructor(
     private http: HttpClient,
-    private recipeService: RecipeService,
+    private imageService: ImageService,
     private authService: AuthService
   ) {}
 
-  storeRecipes() {
-    const recipes = this.recipeService.getRecipes();
+  storeImages() {
+    const images = this.imageService.getImages();
     this.http
       .put(
-        'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
-        recipes
+       'https://todorcholakovgoproject-default-rtdb.europe-west1.firebasedatabase.app/',
+        images
       )
       .subscribe(response => {
         console.log(response);
@@ -29,7 +29,7 @@ export class DataStorageService {
   fetchRecipes() {
     return this.http
       .get<Recipe[]>(
-        'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json'
+        'https://todorcholakovgoproject-default-rtdb.europe-west1.firebasedatabase.app/',
       )
       .pipe(
         map(recipes => {
@@ -41,7 +41,7 @@ export class DataStorageService {
           });
         }),
         tap(recipes => {
-          this.recipeService.setRecipes(recipes);
+          this.imageService.setRecipes(recipes);
         })
       );
   }
