@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, tap, take, exhaustMap } from 'rxjs/operators';
 
-import { Recipe } from '../recipes/recipe.model';
+import { Image } from '../image/image.model';
 import { ImageService } from '../image/image.service';
 import { AuthService } from '../auth/auth.service';
 
@@ -15,10 +15,12 @@ export class DataStorageService {
   ) {}
 
   storeImages() {
-    const images = this.imageService.getImages();
+  //const images = this.imageService.getImages();
+  const images = [{aa:"aaaaaaaaaa"}, {bb:"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}]
+    
     this.http
       .put(
-       'https://todorcholakovgoproject-default-rtdb.europe-west1.firebasedatabase.app/',
+       'https://todorcholakovgoproject-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
         images
       )
       .subscribe(response => {
@@ -28,20 +30,22 @@ export class DataStorageService {
 
   fetchRecipes() {
     return this.http
-      .get<Recipe[]>(
-        'https://todorcholakovgoproject-default-rtdb.europe-west1.firebasedatabase.app/',
+      .get<Image[]>(
+        'https://todorcholakovgoproject-default-rtdb.europe-west1.firebasedatabase.app/posts.json',
       )
       .pipe(
-        map(recipes => {
-          return recipes.map(recipe => {
+        map(images => {
+          return images.map(image => {
+            console.log(image)
             return {
-              ...recipe,
-              ingredients: recipe.ingredients ? recipe.ingredients : []
+              
+              ...image,
+              ingredients: image.ingredients ? image.ingredients : []
             };
           });
         }),
-        tap(recipes => {
-          this.imageService.setRecipes(recipes);
+        tap(images => {
+          this.imageService.setImages(images);
         })
       );
   }

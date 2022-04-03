@@ -7,7 +7,7 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class ImageService {
-  recipesChanged = new Subject<Image[]>();
+  imagesChanged = new Subject<Image[]>();
 
   // private recipes: Recipe[] = [
   //   new Recipe(
@@ -23,37 +23,37 @@ export class ImageService {
   //     [new Ingredient('Buns', 2), new Ingredient('Meat', 1)]
   //   )
   // ];
-  private recipes: Image[] = [];
+  private images: Image[] = [];
 
 
 
-  setRecipes(recipes: Image[]) {
-    this.recipes = recipes;
-    this.recipesChanged.next(this.recipes.slice());
+  setImages(images: Image[]) {
+    this.images = images;
+    this.imagesChanged.next(this.images.slice());
   }
 
   getImages() {
-    return this.recipes.slice();
+    return this.images.slice();
   }
 
   getImage(index: number) {
-    return this.recipes[index];
+    return this.images[index];
   }
 
  
 
   addRecipe(recipe: Image) {
-    this.recipes.push(recipe);
-    this.recipesChanged.next(this.recipes.slice());
+    this.images.push(recipe);
+    this.imagesChanged.next(this.images.slice());
   }
 
   updateRecipe(index: number, newRecipe: Image) {
-    this.recipes[index] = newRecipe;
-    this.recipesChanged.next(this.recipes.slice());
+    this.images[index] = newRecipe;
+    this.imagesChanged.next(this.images.slice());
   }
 
   deleteRecipe(index: number) {
-    this.recipes.splice(index, 1);
-    this.recipesChanged.next(this.recipes.slice());
+    this.images.splice(index, 1);
+    this.imagesChanged.next(this.images.slice());
   }
 }
