@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todorcholakovgoproject": {
+      "hosting": {
+        "photography-portfolio": [
+          "todorcholakovgoproject"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todorcholakovgoproject"
+  }
+}

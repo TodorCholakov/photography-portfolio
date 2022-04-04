@@ -32,24 +32,14 @@
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
           
           <ul class="dropdown-menu">
+        
             <li>
-              <a style="cursor: pointer;" (click)="onSaveData()"  >Test save</a>
-            </li>
-            <li>
-              <a style="cursor: pointer;" (click)="onFetchData()"  >Test fetch data</a>
-            </li>
-            <li>
-              <a routerLink="/add-image" style="cursor: pointer;" >All images </a>
+              <a routerLink="/all-images" style="cursor: pointer;" >All images </a>
             </li>
             <li>
               <a routerLink="/add-image" style="cursor: pointer;" >Add image </a>
             </li>
-            <li>
-              <a style="cursor: pointer;" (click)="onSaveData()">Delete image</a>
-            </li>
-            <li>
-              <a style="cursor: pointer;" (click)="onFetchData()">Delete all images</a>
-            </li>
+        
             <li *ngIf="isAuthenticated">
               <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
             </li>
