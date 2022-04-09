@@ -18,4 +18,8 @@ export class ImageService {
       map(x=>x.map(( y: any) => ({id:y.payload?.key, ...y.payload?.val() as Image})))
       )
   }
+
+  add(image:Image){
+    this.db.list<Image>("/images").push(image)
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/services/image.service';
 import {Image} from "../../models/image"
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-image',
@@ -8,10 +9,13 @@ import {Image} from "../../models/image"
   styleUrls: ['./image.component.css']
 })
 export class ImageComponent implements OnInit {
+  
   images: Image []= []
-  constructor(private imageService: ImageService) { }
+  constructor(
+    private imageService: ImageService) { }
 
   ngOnInit(): void {
+
     this.imageService.getAll().subscribe(p=>this.images = p)
   }
 

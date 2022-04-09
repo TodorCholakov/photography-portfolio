@@ -1,0 +1,16 @@
+<p>gallery works!</p>
+<ul *ngFor="let image of images">
+    <li>Title: {{image.title}}, Description: {{image.description}}, techSpec: {{image.techData}} <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+          
+          <ul class="dropdown-menu">
+        
+            <li>
+              <a routerLink="/all-images" style="cursor: pointer;" >Details </a>
+            </li>
+            <li>
+              <a routerLink="/add-image" style="cursor: pointer;" >Add image </a>
+            </li>
+          </ul> </li>
+</ul>

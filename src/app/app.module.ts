@@ -15,7 +15,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { HomePageComponent } from './home-page/home-page.component';
-import { GalleryComponent } from './gallery/galleries.component';
+
 import { AddImage } from './image/add-image/add-image.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from "@angular/fire/compat";
@@ -25,6 +25,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ImageComponent } from './components/image/image.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 
 @NgModule({
@@ -35,8 +36,9 @@ import { ImageComponent } from './components/image/image.component';
     AuthComponent,
     LoadingSpinnerComponent,
     HomePageComponent,
-    GalleryComponent,
-    ImageComponent
+
+    ImageComponent,
+     GalleryComponent
   ],
   imports: [
     BrowserModule,

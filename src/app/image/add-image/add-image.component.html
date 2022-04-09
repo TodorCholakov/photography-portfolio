@@ -2,9 +2,12 @@
 
 <div class="add-image">
    <p>Add-image works</p>
-   <form>
-      <input type="file" />
-     Gallery <input type="text" />
+   <form #f="ngForm" (ngSubmit)="addImage(f)">
+     imageUrl<input type="text" name="imageUrl" ngModel />
+     title<input type="text" name="title" ngModel />
+     description<input type="text" name="description" ngModel />
+     techData<input type="text" name="techData" ngModel />
+     <button type="submit">add image</button>
    </form>
 </div>
 
