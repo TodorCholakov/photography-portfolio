@@ -1,16 +1,17 @@
-<p>gallery works!</p>
-<ul *ngFor="let image of images">
-    <li>Title: {{image.title}}, Description: {{image.description}}, techSpec: {{image.techData}} <ul class="nav navbar-nav navbar-right">
-        
-        <li class="dropdown" appDropdown *ngIf="isAuthenticated">
-          
-          <ul class="dropdown-menu">
-        
-            <li>
-              <a routerLink="/all-images" style="cursor: pointer;" >Details </a>
-            </li>
-            <li>
-              <a routerLink="/add-image" style="cursor: pointer;" >Add image </a>
-            </li>
-          </ul> </li>
-</ul>
+<div id="Wrapper">
+  <app-header></app-header>
+  <img id="Image" src="../../assets/images/HomeImage.jpg" alt="home image"> 
+  <div class="title">Wildlife</div>
+  <div class="sub-title">Hidden deep into the mountain they live an amazing life</div>
+
+  <ul *ngFor="let image of images">
+    <li>
+      <div class="item-container">
+        <a routerLink="/detailed-image/{{image.id}}" style="cursor: pointer;" ><img class="section-item-img" src="{{image.imageUrl}}" (click)="clicked()"/></a>
+        Title: {{image.title}}, 
+        Description: {{image.description}}, 
+        techSpec: {{image.techData}} 
+      </div>
+    </li>
+  </ul>
+</div>

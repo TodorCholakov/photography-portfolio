@@ -18,8 +18,21 @@ export class ImageService {
       map(x=>x.map(( y: any) => ({id:y.payload?.key, ...y.payload?.val() as Image})))
       )
   }
-
+  get(id:string):Observable<Image >{
+    return this.db.object <Image>("/images/"+id)
+     .snapshotChanges()
+     .pipe(
+         map((( y: any) => ({id:y.payload?.key, ...y.payload?.val() as Image})))
+         )
+     }
+     
   add(image:Image){
     this.db.list<Image>("/images").push(image)
+  }
+  update (imageId: string, image:Image): void{
+    this.db.object<Image>("/images/"+imageId).update(image)
+  }
+  delete (imageId: string){
+    this.db.object<Image>("/images/"+imageId).remove()
   }
 }

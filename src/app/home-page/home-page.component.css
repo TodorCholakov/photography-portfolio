@@ -33,8 +33,7 @@
   width: 100%;
   align-items: bottom;
   justify-content: center;
-  margin-top: -90px;
- 
+
 }
 a {
     text-decoration: none;
@@ -47,17 +46,17 @@ a {
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
   letter-spacing: 1px;
-  transition: 500ms;
+
+  margin-top:-90px;
 }
 
 #Wrapper {
+  margin-top:10px;
   margin-left:10px;
   margin-right:10px;
   display: flex;    
   flex-direction: column;
-  height: calc(100vh - 50px);
-
-
+  height: calc(100vh - 20px);
   @media (max-width: 768px) {
     height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);

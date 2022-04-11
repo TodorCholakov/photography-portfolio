@@ -27,4 +27,8 @@ export class GalleryComponent implements OnInit {
     this.imageService.getAll().subscribe(p=>this.images = p)
   });
 }
+
+clicked():void{
+  console.log("aaaaaaaaaaaaaaaa")
+} 
 }

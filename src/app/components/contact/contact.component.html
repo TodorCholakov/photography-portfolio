@@ -1,0 +1,59 @@
+<div id="Wrapper">
+    <app-header></app-header>
+    <img class="image" src="../../assets/images/contactBackground.jpg" alt="home image"> 
+    <div class="contact-wrapper">
+        <form #f="ngForm" (ngSubmit)="sentMessage(f)">
+        <div class="about-me-container">
+            <h2 class="title">Contact Form</h2>
+            <div class="hr" ></div>
+            <div class="input-container">
+                <div class="nav-title">
+                  <label for="author">Your name: </label>
+                </div>
+                <input class="input"
+                ngModel
+                  id="author"
+                  type="text"
+                  defaultValue=""
+                  name="author"
+                  placeholder="Name..."
+                  required
+                />
+            </div>
+            <div class="input-container">
+                <div class="nav-title">
+                  <label for="email">E-mail: </label>
+                </div>
+                <input class="input"
+                  id="email"
+                  ngModel
+                  type="email"
+                  defaultValue=""
+                  name="email"
+                  placeholder="e-mail..."
+                  required
+                />
+            </div>
+            <div class="input-container">
+                <div class="nav-title">
+                  <label for="textarea">Message: </label>
+                </div>
+                <textarea class="textarea"
+                  id="textarea"
+                  type="text"
+                  defaultValue=""
+                  name="textarea"
+                  ngModel
+                  placeholder="Your message..."
+                  required></textarea>
+            </div>
+                <div class="input-container">
+                    <button class="submit-button" type="submit" value="Sent message" >Sent message</button>
+                </div>
+
+        </div>
+    </form>
+    </div>
+    
+ 
+  </div>

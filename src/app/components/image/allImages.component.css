@@ -56,25 +56,61 @@ a {
 
   
 .section-item-img {
+    display:block;
     margin-top:10px;
   max-width: 250px;
   height: 150px;
   transition: transform 0.5s ease;
 }
-.section-item-img:hover {
-    transition: transform 0.5s ease;
-    opacity: 0.7;
-    transform: scale(
-      1.2
-    ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+
 
 .item-container {
-  max-height: 150px;
   max-width: 200px;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   object-fit: cover;
-  cursor: zoom-in;
   margin: 1px;
+  min-height:300px;
+}
+
+.all-images {
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+    min-height:300px;
+}
+.titleP {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding:5px;
+}
+
+
+
+.myButton {
+    
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:14px 58px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }

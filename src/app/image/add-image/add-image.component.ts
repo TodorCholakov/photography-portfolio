@@ -19,6 +19,7 @@ export class AddImage implements OnInit{
   }
   addImage(f:NgForm){
     this.imageService.add(f.value);
+    console.log(f.value)
     this.router.navigate(["/"])
   }
 }

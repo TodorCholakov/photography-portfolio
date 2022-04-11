@@ -10,41 +10,34 @@
         <li routerLinkActive="active" >
           <a routerLink="/">Home</a>
         </li>
-        <li routerLinkActive="active" *ngIf="isAuthenticated">
-          <a routerLink="/recipes">Recipes</a>
-        </li>
         <li routerLinkActive="active">
           <a routerLink="/gallery">Gallery</a>
         </li>
-        <li routerLinkActive="active">
-          <a routerLink="/shopping-list">Shopping List</a>
-        </li>
       
         <li routerLinkActive="active">
-          <a routerLink="/shopping-list">Contact</a>
+          <a routerLink="/contact">Contact</a>
         </li>
         <li routerLinkActive="active" *ngIf="!isAuthenticated">
           <a routerLink="/auth">Authenticate</a>
         </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+   
         
-        <li class="dropdown" appDropdown *ngIf="isAuthenticated">
+     
           
-          <ul class="dropdown-menu">
+  
         
-            <li>
+            <li *ngIf="isAuthenticated">
               <a routerLink="/all-images" style="cursor: pointer;" >All images </a>
             </li>
-            <li>
+            <li *ngIf="isAuthenticated">
               <a routerLink="/add-image" style="cursor: pointer;" >Add image </a>
             </li>
         
             <li *ngIf="isAuthenticated">
               <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
             </li>
-          </ul>
-        </li>
+            
+     
       </ul>
     </div>
  

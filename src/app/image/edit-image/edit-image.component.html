@@ -1,0 +1,15 @@
+<div id="Wrapper">
+    <app-header></app-header>
+    <div class="item-container">
+        <form #f="ngForm" (ngSubmit)="updateImage(f)">
+            <div class="title">Title:  <input type="text" name="title" [(ngModel)]="image.title"/></div>
+            <div class="title">Description:  <input type="text" name="description" [(ngModel)]="image.description"/></div>
+            <div class="title">Tech data: <input type="text" name="techData" [(ngModel)]="image.techData"/></div>
+            <div class="title">Image url: <input type="text" name="imageUrl" [(ngModel)]="image.imageUrl"/></div>
+            <button type="submit" class="myButton">Edit image</button>
+            
+            
+        </form>
+        <img class="section-item-img" src="{{image.imageUrl}}" />
+    </div>
+  </div>

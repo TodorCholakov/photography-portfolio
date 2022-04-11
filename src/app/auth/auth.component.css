@@ -1,14 +1,19 @@
-#HR{
-  border-bottom: 1px solid white;
+.hr {
+  border-bottom: 1px solid black;
   margin: 3px;
   opacity: 0.7;
   width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
-#Title{
+.title {
   font-family: "Montserrat", sans-serif;
   font-size: 22px;
   font-weight: 400;
- padding:20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 #SubTitle{
   font-family: "Montserrat", sans-serif;
@@ -16,59 +21,95 @@
   font-weight: 300;
   font-style: italic;
 }
-#Image{
+.image {
   object-fit: cover;
-  height: 100vh;
-  margin-top:-330px;
-  z-index:-1;
+  width: 100%;
+  height: 97vh;
+  margin-top: -40px;
   @media (max-width: 768px) {
-    overflow: auto;
+    height: 200px;
+    margin-top: 0px;
   }
 }
 
-.form-group{
+.input-container{
   display: flex;
-  width: 100%;
-  flex-direction: column;
   justify-content: center;
-
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  transition: 500ms;
+  justify-content: left;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+.input {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  min-width: 300px;
+  height: 40px;
 }
 a {
     text-decoration: none;
   }
 .login-form{
   display: flex;
-  width:350px;
-  height:350px;
+  width:450px;
+  height:280px;
   background-color: #ffffff;
   flex-direction: column;
   padding:20px;
   opacity:0.9;
-  align-items: center;
-  justify-content: center;
   margin:0 auto;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
+  margin-top:-600px;
+  
 }
-input{
-  margin:5px;
-}
+
 
 #Wrapper {
-  margin-left:10px;
-  margin-right:10px;
-  display: flex;   
-  margin-top:30px; 
-  flex-direction: column;
-  height: calc(100vh);
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
 
-
+  background-color: #f2f0ef;
 }
 
-.form-control{
-  height:40px;
-  width:200px;
+.submit-button {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  display: inline-block;
+  cursor: pointer;
+  color: #39393f;
+  min-width: 200px;
+  height: 40px;
+  font-size: 16px;
+  padding: 5px;
+  height: 40px;
+  transition: 0.5s;
+
 }
-
-
+.submit-button:hover {
+    transition: 0.5s;
+    color: #ffffff;
+    background-color: lightblue;
+    background-color: #39393f;
+  }
+  .nav-title {
+    display: flex;
+    font-size: 18px;
+    width: 150px;
+    margin-right: 5px;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+  .error {
+    color:red;
+    font-size:20px;
+    text-align: center;
+    margin-top:10px;
+  }

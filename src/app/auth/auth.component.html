@@ -1,59 +1,57 @@
 <div id="Wrapper">
-    <div class="alert alert-danger" *ngIf="error">
-        <p>{{ error }}</p>
-      </div>
-      <div *ngIf="isLoading" style="text-align: center;">
-        <app-loading-spinner></app-loading-spinner>
-      </div>
-     
+  <app-header></app-header>
+  <img class="image" src="../../assets/images/contactBackground.jpg" alt="home image"> 
+    
       <form class="login-form" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-        <span id="Title">Register/Login form</span>
-            <div class="form-group">
-              
-              <label for="email">E-Mail </label>
+        <h2 class="title">Login/register from</h2>
+        <div class="hr" ></div>
+        <div class="input-container">   
+          <div class="nav-title">
+              <label for="email">E-Mail: </label>
+            </div> 
               <input
                 type="email"
                 id="email"
-                class="form-control"
+                class="input"
                 ngModel
                 name="email"
                 required
                 email
               />
-            </div>
-            <div class="form-group">
+             
+        </div>
+        <div class="input-container">   
+          <div class="nav-title">
               <label for="password">Password</label>
+            </div>
               <input
                 type="password"
                 id="password"
-                class="form-control"
+                class="input"
                 ngModel
                 name="password"
                 required
                 minlength="6"
               />
-            </div>
-            <div>
+      
+        </div>
+        <div class="input-container">   
               <button
-                class="btn btn-primary"
+                class="submit-button"
                 type="submit"
                 [disabled]="!authForm.valid"
               >
                 {{ isLoginMode ? 'Login' : 'Sign Up' }}
               </button>
-              |
-              <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+              <button class="submit-button" (click)="onSwitchMode()" type="button">
                 Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
               </button>
             </div>
+            <div class="alert alert-danger" *ngIf="error">
+              <p class="error">{{ error }}</p>
+            </div>
           </form>
-    <img id="Image" src="../../assets/images/HomeImage.jpg" alt="home image"> 
-    <div id="AboutMeContainer">
-      <div id="Title">Todor Cholakov</div>
-      <hr id="HR"/>
-      <div id="SubTitle">Nature photography</div>
-    </div>
-    <div id="GalleryItemsWrpper" >
-    </div>
+    
+   
 </div>
   
