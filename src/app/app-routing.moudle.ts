@@ -12,6 +12,7 @@ import { AddImage } from './image/add-image/add-image.component';
 import { DetailedImageComponent } from './image/detailed-image/detailed-image.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EditImageComponent } from './image/edit-image/edit-image.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 
 const appRoutes: Routes = [
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
   { path: 'add-image', component: AddImage },
   { path: 'contact', component: ContactComponent },
   { path: 'detailed-image/:id', component: DetailedImageComponent },
-  { path: 'detailed-image-edit/:id', component: EditImageComponent }
+  { path: 'detailed-image-edit/:id', component: EditImageComponent },
+  { path: 'received-messages', component: MessagesComponent }
 ];
 
 @NgModule({

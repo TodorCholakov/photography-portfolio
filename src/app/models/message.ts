@@ -3,4 +3,5 @@ export interface Message {
     author:string;
     email: string;
     message: string;
+    toUser:string;
 }

@@ -1,9 +1,10 @@
 <div id="Wrapper">
   <app-header></app-header>
-  <ul *ngFor="let image of images">
+  <ul *ngFor="let image of findNonAdults(images)" >
     <li class="all-images">
       <div class="item-container">
         <img class="section-item-img" src="{{image.imageUrl}}" />
+        <p class="titleP">author: {{image.author}}</p> 
         <p class="titleP">Title: {{image.title}}</p> 
         <p class="titleP">Description: {{image.description}}</p>
         <p class="titleP">techSpec: {{image.techData}}</p> 

@@ -10,17 +10,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-image.component.css']
 })
 export class AddImage implements OnInit{
-  constructor(private imageService:ImageService,
-    private router:Router){
-
+  public user = JSON.parse(localStorage.getItem("userData")).email
+  constructor(
+    private imageService:ImageService,
+    private router:Router,
+    ){
+  
   }
   ngOnInit():void{
-
+    
   }
+  
   addImage(f:NgForm){
     this.imageService.add(f.value);
-    console.log(f.value)
-    this.router.navigate(["/"])
+    
+    this.router.navigate(["/all-images"])
   }
 }
 

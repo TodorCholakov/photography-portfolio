@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-image',
-  templateUrl: './allImages.component.html',
-  styleUrls: ['./allImages.component.css']
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css']
 })
-export class AllImagesComponent implements OnInit {
+export class MessagesComponent implements OnInit {
   id: string |null = "";
   images: Image []= []
   name = JSON.parse(localStorage.getItem("userData")).email

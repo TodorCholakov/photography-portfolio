@@ -27,6 +27,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { DetailedImageComponent } from './image/detailed-image/detailed-image.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EditImageComponent } from './image/edit-image/edit-image.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { EditImageComponent } from './image/edit-image/edit-image.component';
     GalleryComponent,
     DetailedImageComponent,
     ContactComponent,
-    EditImageComponent
+    EditImageComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,21 @@
-
-
-<div class="add-image">
-   <p>Add-image works</p>
+<div id="Wrapper">
+  <app-header></app-header>
+ 
+  <div class="item-container">
+    <img id="Image" src="../../assets/images/HomeImage.jpg" alt="add image"> 
+    <div class="title">Add image</div> 
    <form #f="ngForm" (ngSubmit)="addImage(f)">
-     imageUrl<input type="text" name="imageUrl" ngModel />
-     title<input type="text" name="title" ngModel />
-     description<input type="text" name="description" ngModel />
-     techData<input type="text" name="techData" ngModel />
-     <button type="submit">add image</button>
+     <div class="sub-container">
+        <div class="sub-title">Image url: </div> <input type="text" name="imageUrl" ngModel />
+        <div class="sub-title">Title: </div> <input type="text" name="title" ngModel />
+        <div class="sub-title">description:</div> <input type="text" name="description" ngModel />
+        <div class="sub-title">techData:</div> <input type="text" name="techData" ngModel />
+        <div class="sub-title">Author: </div><input type="hidden" name="author" [(ngModel)]="user" />
+        <button class="myButton" type="submit">Add image</button>
+    </div>
    </form>
 </div>
+</div>
+
 
  

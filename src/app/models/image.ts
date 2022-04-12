@@ -4,4 +4,5 @@ export interface Image {
     title: string;
     description: string;
     techData:string;
+    author:string;
 }

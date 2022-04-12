@@ -27,7 +27,10 @@
   
         
             <li *ngIf="isAuthenticated">
-              <a routerLink="/all-images" style="cursor: pointer;" >All images </a>
+              <a routerLink="/all-images" style="cursor: pointer;" >My images </a>
+            </li>
+            <li *ngIf="isAuthenticated">
+              <a routerLink="/received-messages" style="cursor: pointer;" >Received messages </a>
             </li>
             <li *ngIf="isAuthenticated">
               <a routerLink="/add-image" style="cursor: pointer;" >Add image </a>

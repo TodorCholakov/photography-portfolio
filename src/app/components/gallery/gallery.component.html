@@ -1,9 +1,22 @@
 <div id="Wrapper">
   <app-header></app-header>
   <img id="Image" src="../../assets/images/HomeImage.jpg" alt="home image"> 
+  <form [formGroup]="contactForm" (ngSubmit)="submit()">
+     
+      <select formControlName="country">
+        <option [ngValue]="null" disabled>Select Country</option>
+
+
+       
+      </select>
+     
+      <button type="submit">Submit</button>
+ 
+     
+    </form>
   <div class="title">Wildlife</div>
   <div class="sub-title">Hidden deep into the mountain they live an amazing life</div>
-
+  
   <ul *ngFor="let image of images">
     <li>
       <div class="item-container">
