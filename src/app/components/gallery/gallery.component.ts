@@ -28,8 +28,6 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
-      console.log(!user);
-      console.log(!!user);
     this.imageService.getAll().subscribe(p=>this.images = p)
   });
   this.contactForm = this.fb.group({

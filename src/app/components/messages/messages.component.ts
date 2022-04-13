@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageService } from 'src/app/services/image.service';
-import {Image} from "../../models/image"
+import { ContactService } from 'src/app/services/contact.service';
 import { Router } from '@angular/router';
+import { Message } from "../../models/message"
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,25 +12,25 @@ import { Router } from '@angular/router';
 })
 export class MessagesComponent implements OnInit {
   id: string |null = "";
-  images: Image []= []
+  messages: Message []= []
   name = JSON.parse(localStorage.getItem("userData")).email
 
   constructor(  
-    private imageService: ImageService,
+    private messageService: ContactService,
     private router:Router) { }
 
 
-    findNonAdults(images: any[]): any[] {
-      return images.filter(p => p.author == JSON.parse(localStorage.getItem("userData")).email);
+    findMessages(messages: any[]): any[] {
+      return messages.filter(p => p.toAuthor == JSON.parse(localStorage.getItem("userData")).email);
     }
   ngOnInit(): void {
 
-    this.imageService.getAllAuthor().subscribe(p=>this.images = p)
+    this.messageService.getAllAuthor().subscribe(p=>this.messages = p)
   }
-  onDelete(id:string){
+  onDelete(id : string){
     if(confirm("Are you shure you want to dlete it?")){
-      this.imageService.delete(id)
-      this.router.navigate(["/all-images"])
+      this.messageService.delete(id)
+      this.router.navigate(["/received-messages"])
     }
   }
 }

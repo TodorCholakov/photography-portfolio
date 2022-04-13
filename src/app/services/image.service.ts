@@ -3,8 +3,6 @@ import { AngularFireDatabase, snapshotChanges } from '@angular/fire/compat/datab
 import { Image } from '../models/image';
 import {map} from "rxjs/operators"
 import { Observable } from 'rxjs';
-import { WhereFilterOp } from '@angular/fire/firestore';
-import { query, where } from '@firebase/firestore';
 import { __values } from 'tslib';
 
 @Injectable({
