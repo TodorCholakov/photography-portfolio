@@ -71,6 +71,7 @@ a {
 }
 
 
+
 #Wrapper {
   flex-direction: row;
   justify-content: center;
@@ -112,4 +113,9 @@ a {
     font-size:20px;
     text-align: center;
     margin-top:10px;
+  }
+  .loading-spinner {
+    position:absolute;
+    left:50%;
+    top:7%;
   }

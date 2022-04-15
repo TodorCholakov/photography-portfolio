@@ -6,12 +6,16 @@
     <div class="title">Add image</div> 
    <form #f="ngForm" (ngSubmit)="addImage(f)">
      <div class="sub-container">
-        <div class="sub-title">Image url: </div> <input type="text" name="imageUrl" ngModel />
-        <div class="sub-title">Title: </div> <input type="text" name="title" ngModel />
-        <div class="sub-title">description:</div> <input type="text" name="description" ngModel />
-        <div class="sub-title">techData:</div> <input type="text" name="techData" ngModel />
+        <div class="sub-title">Image url: </div> <input required type="text" name="imageUrl" ngModel #imageUrl="ngModel" />
+        <div class="danger" *ngIf="imageUrl.touched && imageUrl.invalid">Image url is required</div>
+        <div class="sub-title">Title: </div> <input type="text" name="title" ngModel required #title="ngModel"/>
+        <div class="danger" *ngIf="title.touched && title.invalid">Title is required</div>
+        <div class="sub-title">description:</div> <input type="text" name="description" ngModel required #description="ngModel"/>
+        <div class="danger" *ngIf="description.touched && description.invalid">Description is required</div>
+        <div class="sub-title">techData:</div> <input type="text" name="techData" ngModel required #techData="ngModel"/>
+        <div class="danger" *ngIf="techData.touched && techData.invalid">Technical data is required</div>
         <div class="sub-title">Author: </div><input type="hidden" name="author" [(ngModel)]="user" />
-        <button class="myButton" type="submit">Add image</button>
+        <button class="myButton" >Add image</button>
     </div>
    </form>
 </div>

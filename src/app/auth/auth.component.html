@@ -1,7 +1,9 @@
 <div id="Wrapper">
+  <div class="loading-spinner" *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
   <app-header></app-header>
   <img class="image" src="../../assets/images/contactBackground.jpg" alt="home image"> 
-    
       <form class="login-form" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
         <h2 class="title">Login/register from</h2>
         <div class="hr" ></div>

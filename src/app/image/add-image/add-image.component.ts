@@ -22,9 +22,13 @@ export class AddImage implements OnInit{
   }
   
   addImage(f:NgForm){
-    this.imageService.add(f.value);
-    
-    this.router.navigate(["/all-images"])
+    if (f.value.imageUrl!="" && f.value.title!="" && f.value.description!="" && f.value.techData!=""){
+      this.imageService.add(f.value);
+      this.router.navigate(["/all-images"])
+    } else {
+      alert("Please fill all the fields")
+    }
+  
   }
 }
 

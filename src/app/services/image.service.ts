@@ -20,8 +20,14 @@ export class ImageService {
       )
   }
 
+  sortByTitle(){
+    console.log("bbbb")
+    return this.db.list <Image>("/images", ref => (ref.orderByChild('title')))
+  }
+  sortByAuthor(){
+    return this.db.list <Image>("/images", ref => (ref.orderByChild('author')))
+  }
 
-  //return this.db.list <Image>("/images", ref => (ref.orderByChild('description')))
   getAllAuthor():Observable<Image []>{
     return this.db.list <Image>("/images")
      .snapshotChanges()

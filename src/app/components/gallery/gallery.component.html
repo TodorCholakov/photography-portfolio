@@ -1,26 +1,15 @@
 <div id="Wrapper">
   <app-header></app-header>
   <img id="Image" src="../../assets/images/HomeImage.jpg" alt="home image"> 
-  <form [formGroup]="contactForm" (ngSubmit)="submit()">
-     
-      <select formControlName="country">
-        <option [ngValue]="null" disabled>Select Country</option>
-
-
-       
-      </select>
-     
-      <button type="submit">Submit</button>
- 
-     
-    </form>
+  <div class="buttonContainer">
+  <input class="myButton" #query (keyup)="filter(query.value)" type="text" placeholder="Search...">
+</div>
   <div class="title">Wildlife</div>
   <div class="sub-title">Hidden deep into the mountain they live an amazing life</div>
-  
-  <ul *ngFor="let image of images">
+  <ul *ngFor="let image of filteredImages">
     <li>
       <div class="item-container">
-        <a routerLink="/detailed-image/{{image.id}}" style="cursor: pointer;" ><img class="section-item-img" src="{{image.imageUrl}}" (click)="clicked()"/></a>
+        <a routerLink="/detailed-image/{{image.id}}" style="cursor: pointer;" ><img class="section-item-img" src="{{image.imageUrl}}"/></a>
         Title: {{image.title}}, 
         Description: {{image.description}}, 
         techSpec: {{image.techData}} 

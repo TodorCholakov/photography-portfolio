@@ -5,6 +5,9 @@ import { Subscription } from 'rxjs';
 import { AuthService } from "../../auth/auth.service"
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { filter } from 'rxjs';
+
 
 @Component({
   selector: 'app-gallery',
@@ -12,15 +15,23 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
+
   isAuthenticated = false;
   private userSub: Subscription;
-
+  images1:{title:string} []
+  filteredImages : any[]
   contactForm:FormGroup;
-  images: Image []= []
+  images: Image []
+  includes:[]
+  subscription:Subscription
   constructor(
     private imageService: ImageService, 
-  private authService: AuthService,
-  private fb:FormBuilder) { }
+    private authService: AuthService,
+    private router:Router,
+    private fb:FormBuilder) {
+      this.imageService.getAll().subscribe(images=>this.filteredImages=images)
+     }
+
   submit() {
     console.log("Form Submitted")
     console.log(this.contactForm.value)
@@ -28,14 +39,17 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
-    this.imageService.getAll().subscribe(p=>this.images = p)
+    this.imageService.getAll().subscribe(p=>this.images1 = p)
   });
   this.contactForm = this.fb.group({
     country: [null]
   });
 }
 
-clicked():void{
-  console.log("aaaaaaaaaaaaaaaa")
-} 
+filter(query: string){
+  this.filteredImages = (query)?
+  this.images1.filter(p=>p.title.includes(query)):
+  this.images1
+
+}
 }

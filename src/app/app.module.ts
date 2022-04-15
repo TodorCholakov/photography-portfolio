@@ -9,25 +9,22 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.moudle';
 
 import { AuthComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { HomePageComponent } from './home-page/home-page.component';
-
 import { AddImage } from './image/add-image/add-image.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { AngularFireModule } from "@angular/fire/compat";
-
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AllImagesComponent } from './components/image/allImages.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-
 import { DetailedImageComponent } from './image/detailed-image/detailed-image.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EditImageComponent } from './image/edit-image/edit-image.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 @NgModule({

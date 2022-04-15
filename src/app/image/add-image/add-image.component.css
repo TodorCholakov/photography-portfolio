@@ -112,3 +112,10 @@ a {
       height: 200px;
     }
   }
+
+  .danger {
+    background-color: #df6565;
+    opacity: 0.8;
+    width:100%;
+    padding:5px;
+  }
