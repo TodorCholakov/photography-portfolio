@@ -10,9 +10,9 @@
         <div class="danger" *ngIf="imageUrl.touched && imageUrl.invalid">Image url is required</div>
         <div class="sub-title">Title: </div> <input type="text" name="title" ngModel required #title="ngModel"/>
         <div class="danger" *ngIf="title.touched && title.invalid">Title is required</div>
-        <div class="sub-title">description:</div> <input type="text" name="description" ngModel required #description="ngModel"/>
+        <div class="sub-title">Description:</div> <input type="text" name="description" ngModel required #description="ngModel"/>
         <div class="danger" *ngIf="description.touched && description.invalid">Description is required</div>
-        <div class="sub-title">techData:</div> <input type="text" name="techData" ngModel required #techData="ngModel"/>
+        <div class="sub-title">Techical data:</div> <input type="text" name="techData" ngModel required #techData="ngModel"/>
         <div class="danger" *ngIf="techData.touched && techData.invalid">Technical data is required</div>
         <div class="sub-title">Author: </div><input type="hidden" name="author" [(ngModel)]="user" />
         <button class="myButton" >Add image</button>

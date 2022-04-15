@@ -4,10 +4,10 @@
     <li class="all-images">
       <div class="item-container">
         <img class="section-item-img" src="{{image.imageUrl}}" />
-        <p class="titleP">author: {{image.author}}</p> 
+        <p class="titleP">Author: {{image.author}}</p> 
         <p class="titleP">Title: {{image.title}}</p> 
         <p class="titleP">Description: {{image.description}}</p>
-        <p class="titleP">techSpec: {{image.techData}}</p> 
+        <p class="titleP">Technical data: {{image.techData}}</p> 
         <button class="myButton" routerLink="/detailed-image-edit/{{image.id}}" style="cursor: pointer;" >Edit</button>
         <button class="myButton" (click)="onDelete(image.id)" style="cursor: pointer;" >Delete</button>
       </div>

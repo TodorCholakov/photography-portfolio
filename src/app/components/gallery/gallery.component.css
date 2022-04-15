@@ -13,6 +13,7 @@
     font-weight: 300;
     font-style: italic;
     text-align: center;
+    padding-top:10px;
   }
 ul {
     display: inline-block;
@@ -70,13 +71,15 @@ a {
   }
 
 .item-container {
-  max-height: 150px;
+  max-height: 250px;
   max-width: 200px;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
-  object-fit: cover;
   cursor: zoom-in;
   margin: 1px;
+  justify-content: center;
+  align-items: center;
 }
 
 .myButton {

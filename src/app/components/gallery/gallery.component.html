@@ -9,10 +9,10 @@
   <ul *ngFor="let image of filteredImages">
     <li>
       <div class="item-container">
-        <a routerLink="/detailed-image/{{image.id}}" style="cursor: pointer;" ><img class="section-item-img" src="{{image.imageUrl}}"/></a>
-        Title: {{image.title}}, 
-        Description: {{image.description}}, 
-        techSpec: {{image.techData}} 
+        <a routerLink="/detailed-image/{{image.id}}" style="cursor: pointer;" >
+          <img class="section-item-img" src="{{image.imageUrl}}"/>
+          <p class="sub-title">{{image.title}}</p>
+      </a>
       </div>
     </li>
   </ul>
